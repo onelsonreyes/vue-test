@@ -41,7 +41,13 @@
     methods: {
       addEmployee(employee) {
         console.log('reading event from employee form');
-        this.employees = [...this.employees, employee]
+        const lastId = this.employees.length > 0
+                      ? this.employees[this.employees.length - 1].id
+                      : 0;
+        const id = lastId + 1;
+        const newEmployee = { ...employee, id};
+
+        this.employees = [...this.employees, newEmployee];
         //this.employees.push(employee);
       },
     },
