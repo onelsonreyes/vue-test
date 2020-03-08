@@ -3,7 +3,7 @@
     <h1>Employees</h1>
 
     <employee-form @add:employee="addEmployee"/>
-    <employee-table :employees="employees"/>
+    <employee-table :employees="employees" @delete:employee="deleteEmployee"/>
   </div>
 </template>
 
@@ -49,6 +49,12 @@
 
         this.employees = [...this.employees, newEmployee];
         //this.employees.push(employee);
+      },
+
+      deleteEmployee(id) {
+        this.employees = this.employees.filter(
+          employee => employee.id !== id
+        );
       },
     },
   }
