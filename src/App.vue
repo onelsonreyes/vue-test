@@ -8,18 +8,24 @@
                   @delete:employee="deleteEmployee"
                   @edit:employee="editEmployee"
     />
+    <Flavor />
+    <DisplayFlavor />
   </div>
 </template>
 
 <script>
   import EmployeeForm from '@/components/EmployeeForm.vue'
   import EmployeeTable from '@/components/EmployeeTable.vue'
+  import Flavor from '@/components/Flavor.vue'
+  import DisplayFlavor from '@/components/DisplayFlavor.vue'
 
   export default {
     name: 'app',
     components: {
       EmployeeForm,
       EmployeeTable,
+      Flavor,
+      DisplayFlavor
     },
     data () {
       return {
